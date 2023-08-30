@@ -1,11 +1,10 @@
 import React, { useContext } from "react";
-import { ChatContext } from "../context/ChatContext";
-import { AuthContext } from "../context/AuthContext";
+import { Container, Stack } from "react-bootstrap";
+import ChatBox from "../components/ChatBox";
 import PotentialChats from "../components/PotentialChats";
 import UserChat from "../components/UserChat";
-import ChatBox from "../components/ChatBox";
-import { Container, Nav, Navbar, Stack } from "react-bootstrap"
-import CustomNavbar from "../components/CustomNavbar";
+import { AuthContext } from "../context/AuthContext";
+import { ChatContext } from "../context/ChatContext";
 
 export default function Chat() {
 

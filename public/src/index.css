@@ -244,3 +244,9 @@ body {
 .react-emoji {
   flex-direction: row-reverse !important;
 }
+
+.notification-box {
+  position: absolute;
+  top: 50px;
+  right: 0;
+}

@@ -13,7 +13,7 @@ export default function ChatBox() {
     const { recipientUser } = useFetchRecipientUser(currentChat, user)
     const [textMessage, setTextMessage] = useState("")
     const chatBoxRef = useRef(null); 
-
+  
     const handleSendMessage = () => {
         if (!textMessage) return;
         sendTextMessage(textMessage, user, currentChat._id, setTextMessage);

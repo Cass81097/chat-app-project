@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Container, Nav, Navbar, Stack } from "react-bootstrap"
 import { Link } from "react-router-dom"
 import { AuthContext } from "../context/AuthContext";
+import Notifications from "./Notifications";
 
 export default function CustomNavbar() {
     const { user, logOutUser } = useContext(AuthContext)
@@ -23,6 +24,7 @@ export default function CustomNavbar() {
                         <Stack direction="horizontal" gap={3}>
                             {
                                 user && (<>
+                                    <Notifications />
                                     <Link onClick={() => logOutUser()} to="/login" className="link-light text-decoration-none" >
                                         Logout
                                     </Link>
