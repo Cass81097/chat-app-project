@@ -1,18 +1,23 @@
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
-const authRoutes = require("./routes/auth");
-const messageRoutes = require("./routes/messages");
+const userRoute = require("./routes/userRoute")
+const chatRoute = require("./routes/chatRoute")
+const messageRoute = require("./routes/messageRoute")
+
 const app = express();
 const socket = require("socket.io");
 require("dotenv").config();
 
 app.use(cors());
 app.use(express.json());
+app.use("/api/users", userRoute);
+app.use("/api/chats", chatRoute);
+app.use("/api/messages", messageRoute);
 
-app.use("/api/auth", authRoutes);
-app.use("/api/messages", messageRoutes);
-
+app.get("/", (req, res) => {
+  res.send("Welcome our chat app APIs..")
+})
 
 const connectDatabase = async () => {
   try {
